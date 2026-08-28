@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Материалы к лекции: от технической коммуникации к управлению знаниями</title>
+<style>
+:root{
+  color-scheme: light;
+  --midnight:#21295C; --teal:#1C7293; --deep:#065A82;
+  --light:#F2F6F8; --ink:#1A2733; --muted:#5B6B78;
+  --accent:#F2A65A; --ok:#2E7D5B; --line:#E1E8ED; --white:#fff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--light); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 80px}
+
+/* header */
+header{background:var(--midnight);color:#fff;padding:56px 0 44px;margin-bottom:36px}
+header .wrap{padding-bottom:0}
+.kicker{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+h1{font-size:34px;line-height:1.25;margin:0 0 14px;font-weight:700}
+.sub{font-size:17px;color:#AEC3D6;margin:0 0 22px;max-width:760px}
+.by{font-size:14px;color:#8FA8BF}
+.by a{color:#CFE2F0}
+
+/* nav */
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:-14px 0 40px}
+nav a{
+  display:inline-block;padding:9px 15px;background:var(--white);border:1px solid var(--line);
+  border-radius:999px;font-size:14px;color:var(--deep);text-decoration:none;font-weight:600;
+}
+nav a:hover{border-color:var(--teal);color:var(--teal)}
+
+/* sections */
+section{margin-bottom:48px;scroll-margin-top:20px}
+h2{font-size:25px;margin:0 0 6px;color:var(--midnight)}
+.lead{color:var(--muted);margin:0 0 22px;font-size:15px;max-width:820px}
+
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:14px;
+  padding:22px 24px;margin-bottom:14px;
+}
+.card h3{margin:0 0 4px;font-size:18px;color:var(--deep)}
+.card h3 a{color:inherit;text-decoration:none}
+.card h3 a:hover{text-decoration:underline}
+.card p{margin:6px 0 0;color:var(--muted);font-size:15px}
+.card .why{margin-top:10px;font-size:14px;color:var(--ink);background:var(--light);
+  border-radius:8px;padding:10px 12px}
+.card .why b{color:var(--midnight)}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+
+.skill{border-left:4px solid var(--teal)}
+.skill.biz{border-left-color:var(--accent)}
+
+ul.links{list-style:none;margin:12px 0 0;padding:0}
+ul.links li{padding:7px 0;border-top:1px solid var(--line);font-size:15px}
+ul.links li:first-child{border-top:none}
+ul.links a{color:var(--deep);text-decoration:none;font-weight:600}
+ul.links a:hover{text-decoration:underline}
+ul.links span{color:var(--muted);font-weight:400}
+
+.series{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px}
+.series ol{margin:14px 0 0;padding-left:0;list-style:none;counter-reset:s}
+.series ol li{
+  counter-increment:s;position:relative;padding:12px 0 12px 46px;border-top:1px solid var(--line);
+}
+.series ol li:first-child{border-top:none}
+.series ol li::before{
+  content:counter(s);position:absolute;left:0;top:12px;width:28px;height:28px;border-radius:50%;
+  background:var(--teal);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.series ol li a{color:var(--deep);font-weight:700;text-decoration:none;font-size:15px}
+.series ol li a:hover{text-decoration:underline}
+.series ol li em{display:block;color:var(--muted);font-style:normal;font-size:14px;margin-top:2px}
+.pill{display:inline-block;background:#FDF1E3;color:#9A5B12;border-radius:6px;
+  padding:3px 9px;font-size:12px;font-weight:700;margin-bottom:10px}
+
+.note{background:var(--midnight);color:#D5E3EE;border-radius:14px;padding:22px 24px;font-size:15px}
+.note b{color:#fff}
+
+footer{border-top:1px solid var(--line);margin-top:40px;padding-top:24px;color:var(--muted);font-size:14px}
+footer a{color:var(--deep)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">Лекция 13 · материалы</p>
+    <h1>От технической коммуникации<br>к управлению знаниями</h1>
+    <p class="sub">Все, что упоминалось в лекции, плюс то, что не поместилось. Сгруппировано по темам: сначала общее про управление знаниями, дальше — по конкретным навыкам.</p>
+    <p class="by">Лана Новикова · канал <a href="https://t.me/the_know_all">Knowledge &amp; Bacon</a></p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav>
+  <a href="#start">С чего начать</a>
+  <a href="#general">Общее по KM</a>
+  <a href="#unpack">Распаковка знаний</a>
+  <a href="#terms">Термины и структура</a>
+  <a href="#findability">Находимость и поиск</a>
+  <a href="#culture">Культура и процессы</a>
+  <a href="#business">Бизнес-ценность</a>
+  <a href="#ai">Знания и ИИ</a>
+</nav>
+
+<section id="start">
+  <h2>Если читать только одно</h2>
+  <p class="lead">Одна ссылка, с которой можно начать разбираться в теме.</p>
+  <div class="card">
+    <h3><a href="https://pragmatic-km.guide/">Прагматичный гайд по управлению знаниями</a></h3>
+    <p>Практики, быстрые выигрыши, живые кейсы. На русском, открытый.</p>
+    <div class="why"><b>Зачем:</b> самая короткая дорога от «интересно» к «сделал в своей команде».</div>
+  </div>
+</section>
+
+<section id="general">
+  <h2>Общее по управлению знаниями</h2>
+  <p class="lead">База: с чего состоит дисциплина, откуда взялась и где про нее говорят.</p>
+
+  <div class="card">
+    <h3><a href="https://pragmatic-km.guide/">pragmatic-km.guide</a></h3>
+    <p>Практический гайд по управлению знаниями на русском. Структурирован по практикам: онбординг, фиксация знаний, культура обмена, выученные уроки, картирование.</p>
+    <ul class="links">
+      <li><a href="https://pragmatic-km.guide/usage/README.html">Зачем это нужно</a> <span>— если надо объяснить смысл KM коллегам</span></li>
+      <li><a href="https://pragmatic-km.guide/wins/README.html">Быстрые выигрыши</a> <span>— что можно сделать за неделю</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/README.html">Все практики</a> <span>— каталог по темам</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Модель SECI, Икудзиро Нонака</h3>
+    <p>Классика: как неявное знание превращается в явное и обратно. Четыре режима — социализация, экстернализация, комбинация, интернализация.</p>
+    <ul class="links">
+      <li><a href="https://teamly.ru/blog/spiral_znanij/">Спираль знаний: разбор модели на русском</a> <span>— читается за вечер</span></li>
+    </ul>
+    <div class="why"><b>Зачем:</b> дает язык, на котором можно объяснить руководителю, почему знание не передается само.</div>
+  </div>
+
+  <div class="card">
+    <h3>KCS · Knowledge Centered Service</h3>
+    <p>Методология и индустриальный стандарт: создание и обновление базы знаний встроены в ежедневную работу поддержки, а не поручены отдельному редактору.</p>
+    <ul class="links">
+      <li><a href="https://www.thekcsacademy.net/">KCS Academy</a> <span>— первоисточник и сертификация</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/kcs/README.html">KCS в прагматичном гайде</a> <span>— краткий разбор на русском</span></li>
+    </ul>
+    <div class="why"><b>Зачем:</b> если работаете рядом с саппортом — это самый быстрый способ показать пользу от базы знаний в цифрах.</div>
+  </div>
+
+  <div class="card">
+    <h3>KnowledgeConf</h3>
+    <p>Конференция про управление знаниями в бизнесе. Много докладов лежит в открытом доступе.</p>
+    <ul class="links">
+      <li><a href="https://rutube.ru/plst/1121522/">Плейлист 2024 года на Rutube</a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PL_L_HiHe5k_3PQ3EkE3TU2vo_ddv-Gp3i">Плейлист 2025 года на YouTube</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><a href="https://t.me/the_know_all">Knowledge &amp; Bacon</a></h3>
+    <p>Мой телеграм-канал: практики управления знаниями, разборы, находки и то, что не поместилось в лекцию.</p>
+  </div>
+</section>
+
+<section id="unpack">
+  <h2>Навык: распаковка знаний и работа с экспертами</h2>
+  <p class="lead">Как вытащить из головы эксперта то, что он сам считает очевидным. Базовый навык и техписателя, и менеджера знаний.</p>
+
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/knowledge-sharing/experts.html">Subject Matter Expert: как работать с экспертами</a></h3>
+    <p>Кто такой SME, как выстроить с ним отношения, как не превратиться в диктофон.</p>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://habr.com/ru/companies/oleg-bunin/articles/673594/">Как задавать вопросы осмысленно</a></h3>
+    <p>Разбор Валентины Уржумовой: техники погружения (пять почему, 5W1H), парафраз и эхо-вопросы, зачем держать паузу и почему «как» и «расскажи» работают лучше, чем «почему» и «зачем».</p>
+    <ul class="links">
+      <li><a href="https://pragmatic-km.guide/practices/knowledge-sharing/asking-questions.html">Задавание вопросов как практика KM</a> <span>— как встроить это в процессы команды</span></li>
+    </ul>
+    <div class="why"><b>Из лекции:</b> именно здесь появляется ответ на «почему шаг 3 именно такой» — тот контекст, который стирается через полгода.</div>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/lessons-learned/README.html">Выученные уроки, post mortem, after action review</a></h3>
+    <p>Форматы, в которых опыт команды превращается в зафиксированное знание сразу после события.</p>
+  </div>
+</section>
+
+<section id="terms">
+  <h2>Навык: термины, структура, шаблоны</h2>
+  <p class="lead">Чтобы все называли вещи одинаково, а страницы имели предсказуемую форму.</p>
+
+  <div class="card skill">
+    <h3><a href="https://www.thegooddocsproject.dev/template">Шаблоны The Good Docs Project</a></h3>
+    <p>Открытые шаблоны документации: how-to, reference, tutorial, release notes и другие. Каждый с пояснением, когда применять.</p>
+    <div class="why"><b>Зачем:</b> самый дешевый способ поднять качество базы знаний — дать людям форму, которую надо просто заполнить.</div>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/knowledge-registration/skills-writing/templates.html">Шаблоны как практика KM</a></h3>
+    <p>Как внедрять шаблоны так, чтобы ими правда пользовались.</p>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://knowledgeconf.ru/2020/abstracts/6442">Одна методика картирования знаний</a></h3>
+    <p>Доклад Евгения Викторова с KnowledgeConf: карты знаний отвечают на вопросы «кто знает что» и «кто знает кого», а еще показывают, где слабое звено и кто настоящий эксперт. Есть презентация в открытом доступе.</p>
+    <ul class="links">
+      <li><a href="https://pragmatic-km.guide/practices/review-knowledge/competence-map.html">Модель компетенций в прагматичном гайде</a> <span>— как собрать карту знаний команды</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="findability">
+  <h2>Навык: находимость и информационная архитектура</h2>
+  <p class="lead">Почему люди не находят то, что точно есть в базе.</p>
+
+  <div class="card skill">
+    <h3><a href="https://www.thegooddocsproject.dev/tactic/ia-guide">Let your readers be the guide</a></h3>
+    <p>Тактика The Good Docs Project: как строить структуру документации от точки зрения читателя, а не от структуры продукта.</p>
+    <div class="why"><b>Из лекции:</b> статья должна называться теми словами, которыми ее ищут, а не теми, которыми ее назвал бы автор.</div>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/knowledge-registration/skills-reading/activation-point.html">Точка активации</a></h3>
+    <p>Про то, где именно человек встречается со знанием. Ссылка должна лежать там, где возникает вопрос.</p>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/knowledge-registration/docs/helicopter-view.html">Обзоры и helicopter view</a></h3>
+    <p>Как давать общую картину, без которой отдельные статьи не складываются в систему.</p>
+  </div>
+</section>
+
+<section id="culture">
+  <h2>Навык: процессы, культура, фасилитация</h2>
+  <p class="lead">В управлении знаниями много переговоров и вовлечения, а не только письма.</p>
+
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/knowledge-sharing/README.html">Культура обмена знаниями</a></h3>
+    <p>Как сделать, чтобы делиться знанием было нормой, а не подвигом энтузиаста.</p>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/knowledge-sharing/sharing-framework.html">Фреймворк шаринга знаний</a></h3>
+    <p>Систематизация форматов: от митапов и гильдий до парного программирования.</p>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/onboarding/README.html">Онбординг</a></h3>
+    <p>Практики адаптации новичков — самая частая точка входа в KM для техписателя.</p>
+    <div class="why"><b>Из лекции:</b> «понятно машине ≈ понятно новичку». Онбординг — лучший тест качества ваших знаний.</div>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://pragmatic-km.guide/practices/knowledge-registration/processes/README.html">Встраивание фиксации знаний в процессы</a></h3>
+    <p>Чтобы знание фиксировалось по ходу работы, а не в специально выделенный день.</p>
+  </div>
+</section>
+
+<section id="business">
+  <h2>Навык: обоснование бизнес-ценности</h2>
+  <p class="lead">Умение переводить свою работу на язык бизнеса и цифр. То, что отличает специалиста, которого слушают.</p>
+
+  <div class="card skill biz">
+    <span class="pill">Серия из 10 статей · The Good Docs Project</span>
+    <h3><a href="https://www.thegooddocsproject.dev/tactic/making-business-case-conclude">Making a business case for documentation</a></h3>
+    <p>Серия из 10 статей о том, как обосновать ценность документации перед бизнесом, как разобраться в бизнес-модели компании и простроить от нее метрики.</p>
+    <div class="why"><b>Что внутри:</b> оценка текущего состояния, влияние документации на выручку, издержки и риски, сборка бизнес-кейса, расчет ROI, разговор с разными стейкхолдерами и работа с возражениями.</div>
+  </div>
+
+  <div class="card skill biz" style="margin-top:14px">
+    <h3><a href="https://pragmatic-km.guide/practices/knowledge-managers/README.html">Формирование отдела Knowledge Management</a></h3>
+    <p>Что делать, если задача выросла из личной инициативы в отдельную функцию.</p>
+  </div>
+</section>
+
+<section id="ai">
+  <h2>Знания и ИИ</h2>
+  <p class="lead">Про второго читателя вашей документации.</p>
+
+  <div class="card">
+    <h3><a href="https://pragmatic-km.guide/practices/ai-km/README.html">ИИ в управлении знаниями</a></h3>
+    <p>Раздел прагматичного гайда: почему ИИ-проекты упираются не в модель, а в качество знаний.</p>
+    <ul class="links">
+      <li><a href="https://pragmatic-km.guide/practices/ai-km/gigo-problem.html">Проблема качества данных</a> <span>— garbage in, garbage out и дрейф знаний</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/ai-km/ontology-graph-rag.html">Семантическая нарезка и онтологический RAG</a> <span>— почему обычный поиск ломается</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/ai-km/continuous-documentation.html">Документирование на лету</a> <span>— как вытаскивать знания прямо из процессов</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/ai-km/ai-in-sdlc.html">ИИ в процессах разработки</a> <span>— ADR и связь решений с реализацией</span></li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <b>Практика на пять минут.</b> Задайте внутреннему ИИ-ассистенту три обычных вопроса про работу вашей команды — из тех, что задают новички. Ответы покажут состояние ваших знаний честнее любого аудита: что не записано, что устарело, где нет владельца.
+  </div>
+</section>
+
+<footer>
+  <p><b>Первый шаг после лекции.</b> Найдите один вопрос, который в чате задают каждую неделю. Закройте его одной страницей — с владельцем, датой обновления и точкой входа там, где спрашивают. Через месяц посмотрите, стали ли спрашивать реже.</p>
+  <p>Вопросы и обсуждения: <a href="https://t.me/the_know_all">канал Knowledge &amp; Bacon</a> · <a href="https://www.linkedin.com/in/svetlana-novikova/">LinkedIn</a></p>
+</footer>
+
+</div>
+</body>
+</html>
