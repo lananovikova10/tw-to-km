@@ -85,8 +85,23 @@ ul.links span{color:var(--muted);font-weight:400}
 .note{background:var(--midnight);color:#D5E3EE;border-radius:14px;padding:22px 24px;font-size:15px}
 .note b{color:#fff}
 
-.deeper{color:var(--muted);font-size:14px;margin-top:16px}
-.deeper a{color:var(--deep)}
+.card ol.steps{margin:10px 0 0;padding-left:0;list-style:none;counter-reset:st}
+.card ol.steps li{
+  counter-increment:st;position:relative;padding:9px 0 9px 34px;font-size:15px;
+  color:var(--muted);border-top:1px solid var(--line);
+}
+.card ol.steps li:first-child{border-top:none}
+.card ol.steps li::before{
+  content:counter(st);position:absolute;left:0;top:10px;width:22px;height:22px;border-radius:50%;
+  background:var(--light);color:var(--teal);font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.card ol.steps li b{color:var(--ink)}
+.card p.steps-intro{margin-top:14px;color:var(--ink);font-size:15px}
+
+.deeper{background:var(--white);border:1px dashed #CBD7E0;border-radius:14px;padding:18px 22px;margin-top:14px}
+.deeper > p{margin:0;color:var(--muted);font-size:14px}
+.deeper > p b{color:var(--ink)}
 
 footer{border-top:1px solid var(--line);margin-top:40px;padding-top:24px;color:var(--muted);font-size:14px}
 footer a{color:var(--deep)}
@@ -98,7 +113,7 @@ footer a{color:var(--deep)}
   <div class="wrap">
     <p class="kicker">Материалы к лекции</p>
     <h1>От технической коммуникации<br>к управлению знаниями</h1>
-    <p class="sub">Все, что упоминалось в лекции, плюс то, что не поместилось. Сгруппировано по темам: сначала общее про управление знаниями, дальше — по конкретным навыкам.</p>
+    <p class="sub">Все, что упоминалось в лекции, плюс то, что не поместилось. Сгруппировано по темам: сначала общее про управление знаниями, дальше – по конкретным навыкам.</p>
     <p class="by">Лана Новикова · канал <a href="https://t.me/the_know_all">Knowledge &amp; Bacon</a></p>
   </div>
 </header>
@@ -134,17 +149,17 @@ footer a{color:var(--deep)}
     <h3><a href="https://pragmatic-km.guide/">pragmatic-km.guide</a></h3>
     <p>Практический гайд по управлению знаниями на русском. Структурирован по практикам: онбординг, фиксация знаний, культура обмена, выученные уроки, картирование.</p>
     <ul class="links">
-      <li><a href="https://pragmatic-km.guide/usage/README.html">Зачем это нужно</a> <span>— если надо объяснить смысл KM коллегам</span></li>
-      <li><a href="https://pragmatic-km.guide/wins/README.html">Быстрые выигрыши</a> <span>— что можно сделать за неделю</span></li>
-      <li><a href="https://pragmatic-km.guide/practices/README.html">Все практики</a> <span>— каталог по темам</span></li>
+      <li><a href="https://pragmatic-km.guide/usage/README.html">Зачем это нужно</a> <span>– если надо объяснить смысл KM коллегам</span></li>
+      <li><a href="https://pragmatic-km.guide/wins/README.html">Быстрые выигрыши</a> <span>– что можно сделать за неделю</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/README.html">Все практики</a> <span>– каталог по темам</span></li>
     </ul>
   </div>
 
   <div class="card">
     <h3>Модель SECI, Икудзиро Нонака</h3>
-    <p>Классика: как неявное знание превращается в явное и обратно. Четыре режима — социализация, экстернализация, комбинация, интернализация.</p>
+    <p>Классика: как неявное знание превращается в явное и обратно. Четыре режима – социализация, экстернализация, комбинация, интернализация.</p>
     <ul class="links">
-      <li><a href="https://teamly.ru/blog/spiral_znanij/">Спираль знаний: разбор модели на русском</a> <span>— читается за вечер</span></li>
+      <li><a href="https://teamly.ru/blog/spiral_znanij/">Спираль знаний: разбор модели на русском</a> <span>– читается за вечер</span></li>
     </ul>
     <div class="why"><b>Зачем:</b> дает язык, на котором можно объяснить руководителю, почему знание не передается само.</div>
   </div>
@@ -153,10 +168,10 @@ footer a{color:var(--deep)}
     <h3>KCS · Knowledge Centered Service</h3>
     <p>Методология и индустриальный стандарт: создание и обновление базы знаний встроены в ежедневную работу поддержки, а не поручены отдельному редактору.</p>
     <ul class="links">
-      <li><a href="https://www.thekcsacademy.net/">KCS Academy</a> <span>— первоисточник и сертификация</span></li>
-      <li><a href="https://pragmatic-km.guide/practices/kcs/README.html">KCS в прагматичном гайде</a> <span>— краткий разбор на русском</span></li>
+      <li><a href="https://www.thekcsacademy.net/">KCS Academy</a> <span>– первоисточник и сертификация</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/kcs/README.html">KCS в прагматичном гайде</a> <span>– краткий разбор на русском</span></li>
     </ul>
-    <div class="why"><b>Зачем:</b> если работаете рядом с саппортом — это самый быстрый способ показать пользу от базы знаний в цифрах.</div>
+    <div class="why"><b>Зачем:</b> если работаете рядом с саппортом – это самый быстрый способ показать пользу от базы знаний в цифрах.</div>
   </div>
 
   <div class="card">
@@ -186,9 +201,9 @@ footer a{color:var(--deep)}
     <h3><a href="https://habr.com/ru/companies/oleg-bunin/articles/673594/">Как задавать вопросы осмысленно</a></h3>
     <p>Разбор Валентины Уржумовой: техники погружения (пять почему, 5W1H), парафраз и эхо-вопросы, зачем держать паузу и почему «как» и «расскажи» работают лучше, чем «почему» и «зачем».</p>
     <ul class="links">
-      <li><a href="https://pragmatic-km.guide/practices/knowledge-sharing/asking-questions.html">Задавание вопросов как практика KM</a> <span>— как встроить это в процессы команды</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/knowledge-sharing/asking-questions.html">Задавание вопросов как практика KM</a> <span>– как встроить это в процессы команды</span></li>
     </ul>
-    <div class="why"><b>Из лекции:</b> именно здесь появляется ответ на «почему шаг 3 именно такой» — тот контекст, который стирается через полгода.</div>
+    <div class="why"><b>Из лекции:</b> именно здесь появляется ответ на «почему шаг 3 именно такой» – тот контекст, который стирается через полгода.</div>
   </div>
   <div class="card skill">
     <h3><a href="https://pragmatic-km.guide/practices/lessons-learned/README.html">Выученные уроки, post mortem, after action review</a></h3>
@@ -203,7 +218,7 @@ footer a{color:var(--deep)}
   <div class="card skill">
     <h3><a href="https://www.thegooddocsproject.dev/template">Шаблоны The Good Docs Project</a></h3>
     <p>Открытые шаблоны документации: how-to, reference, tutorial, release notes и другие. Каждый с пояснением, когда применять.</p>
-    <div class="why"><b>Зачем:</b> самый дешевый способ поднять качество базы знаний — дать людям форму, которую надо просто заполнить.</div>
+    <div class="why"><b>Зачем:</b> самый дешевый способ поднять качество базы знаний – дать людям форму, которую надо просто заполнить.</div>
   </div>
   <div class="card skill">
     <h3><a href="https://pragmatic-km.guide/practices/knowledge-registration/skills-writing/templates.html">Шаблоны как практика KM</a></h3>
@@ -213,7 +228,7 @@ footer a{color:var(--deep)}
     <h3><a href="https://knowledgeconf.ru/2020/abstracts/6442">Одна методика картирования знаний</a></h3>
     <p>Доклад Евгения Викторова с KnowledgeConf: карты знаний отвечают на вопросы «кто знает что» и «кто знает кого», а еще показывают, где слабое звено и кто настоящий эксперт. Есть презентация в открытом доступе.</p>
     <ul class="links">
-      <li><a href="https://pragmatic-km.guide/practices/review-knowledge/competence-map.html">Модель компетенций в прагматичном гайде</a> <span>— как собрать карту знаний команды</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/review-knowledge/competence-map.html">Модель компетенций в прагматичном гайде</a> <span>– как собрать карту знаний команды</span></li>
     </ul>
   </div>
 </section>
@@ -226,6 +241,21 @@ footer a{color:var(--deep)}
     <h3><a href="https://diataxis.fr/">Diátaxis</a></h3>
     <p>Фреймворк Даниэле Прочиды: четыре типа материалов – туториал, how-to, справочник и объяснение. Тип определяется не темой, а потребностью читателя в конкретный момент: учится он, решает задачу, сверяется или разбирается.</p>
     <div class="why"><b>Зачем:</b> самый быстрый способ перестать писать «просто текст». Если начинать изучать ИА с чего-то одного – начинайте отсюда: бесплатно, читается за вечер, стало де-факто стандартом в индустрии.</div>
+  </div>
+  <div class="card skill">
+    <h3><a href="https://www.howtomakesenseofanymess.com/">How to Make Sense of Any Mess</a></h3>
+    <p>Книга Эбби Коверт про информационную архитектуру – причем не про сайты, а про любой беспорядок: папку с документами, базу знаний, доставшийся в наследство проект, собственную голову. Все 160 страниц выложены на сайте бесплатно, с иллюстрациями, рабочими листами и словарем терминов: по нему книгу можно читать не по порядку, а прослеживая одно понятие через все главы.</p>
+    <p class="steps-intro"><b>Семь шагов, вокруг которых построена книга:</b></p>
+    <ol class="steps">
+      <li><b>Опознать беспорядок.</b> Беспорядок состоит из информации и людей, и вторые всегда сложнее. Здесь же самое полезное различение книги: банки с джемом на полке – это контент, ваши наблюдения о них – данные, а вывод, который человек делает, увидев на полке пустое место, – информация. Один решит «раскупили», другой – «не завезли». Отсутствие контента информирует не меньше, чем его наличие.</li>
+      <li><b>Заявить намерение.</b> Начинать с «зачем», а не с «как». Язык – это материал, из которого сделано намерение: пока не договорились, что для вас значит «хорошо», делать нечего.</li>
+      <li><b>Посмотреть в лицо реальности.</b> Оценить масштаб, участников и то, что уже есть. Тут же набор из десяти видов схем, от блок-схемы до карты пути, которыми реальность можно нарисовать и обсудить. Архитектура раньше дизайна.</li>
+      <li><b>Выбрать направление.</b> Составить список слов, которые вы говорите, и отдельный список слов, которые не говорите. Ваша онтология уже существует, вопрос только в том, признали вы ее или нет.</li>
+      <li><b>Измерить расстояние.</b> Между намерением и реальностью есть дистанция. Меряют не только успех, но и прогресс: базовый замер, индикаторы, флажки «идем не туда».</li>
+      <li><b>Поиграть со структурой.</b> Таксономии, фасеты, иерархии. Главный размен: неоднозначность стоит вам ясности, а точность стоит гибкости.</li>
+      <li><b>Приготовиться поправлять.</b> Хорошую информационную архитектуру никто не замечает. Название главы говорит само за себя: «Ух ты, какая классная ИА!» не сказал никто и никогда.</li>
+    </ol>
+    <div class="why"><b>Зачем:</b> самый мягкий вход в тему – без жаргона, с картинками и упражнениями. И самая полезная для менеджера знаний рамка: беспорядок почти никогда не в текстах, он в том, что люди не договорились о словах.</div>
   </div>
   <div class="card skill">
     <h3><a href="https://www.thegooddocsproject.dev/tactic/ia-guide">Let your readers be the guide</a></h3>
@@ -255,7 +285,13 @@ footer a{color:var(--deep)}
     </ul>
   </div>
 
-  <p class="deeper">Если захочется копнуть до самого фундамента: <a href="https://www.oreilly.com/library/view/information-architecture-4th/9781491913529/">Розенфельд, Морвиль и Аранго, «Information Architecture»</a> – та самая книга с белым медведем, классика дисциплины, 4-е издание. Она не про документацию и почти на 500 страниц, так что это чтение не на первый месяц.</p>
+  <div class="deeper">
+    <p><b>Если захочется углубиться в ИА как в дисциплину</b> – еще две книги, обе платные, от практики к фундаменту.</p>
+    <ul class="links">
+      <li><a href="https://everydayia.com/">Everyday Information Architecture</a> <span>– Лиза Мария Маркиз. 126 страниц про повседневную работу: проанализировать имеющийся контент, собрать таксономию, построить внятную карту сайта и навигацию.</span></li>
+      <li><a href="https://www.oreilly.com/library/view/information-architecture-4th/9781491913529/">Information Architecture</a> <span>– Розенфельд, Морвиль и Аранго, та самая книга с белым медведем. Фундамент дисциплины, 4-е издание, почти 500 страниц. Не про документацию и не на первый месяц.</span></li>
+    </ul>
+  </div>
 </section>
 
 <section id="culture">
@@ -272,8 +308,8 @@ footer a{color:var(--deep)}
   </div>
   <div class="card skill">
     <h3><a href="https://pragmatic-km.guide/practices/onboarding/README.html">Онбординг</a></h3>
-    <p>Практики адаптации новичков — самая частая точка входа в KM для техписателя.</p>
-    <div class="why"><b>Из лекции:</b> «понятно машине ≈ понятно новичку». Онбординг — лучший тест качества ваших знаний.</div>
+    <p>Практики адаптации новичков – самая частая точка входа в KM для техписателя.</p>
+    <div class="why"><b>Из лекции:</b> «понятно машине ≈ понятно новичку». Онбординг – лучший тест качества ваших знаний.</div>
   </div>
   <div class="card skill">
     <h3><a href="https://pragmatic-km.guide/practices/knowledge-registration/processes/README.html">Встраивание фиксации знаний в процессы</a></h3>
@@ -306,20 +342,20 @@ footer a{color:var(--deep)}
     <h3><a href="https://pragmatic-km.guide/practices/ai-km/README.html">ИИ в управлении знаниями</a></h3>
     <p>Раздел прагматичного гайда: почему ИИ-проекты упираются не в модель, а в качество знаний.</p>
     <ul class="links">
-      <li><a href="https://pragmatic-km.guide/practices/ai-km/gigo-problem.html">Проблема качества данных</a> <span>— garbage in, garbage out и дрейф знаний</span></li>
-      <li><a href="https://pragmatic-km.guide/practices/ai-km/ontology-graph-rag.html">Семантическая нарезка и онтологический RAG</a> <span>— почему обычный поиск ломается</span></li>
-      <li><a href="https://pragmatic-km.guide/practices/ai-km/continuous-documentation.html">Документирование на лету</a> <span>— как вытаскивать знания прямо из процессов</span></li>
-      <li><a href="https://pragmatic-km.guide/practices/ai-km/ai-in-sdlc.html">ИИ в процессах разработки</a> <span>— ADR и связь решений с реализацией</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/ai-km/gigo-problem.html">Проблема качества данных</a> <span>– garbage in, garbage out и дрейф знаний</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/ai-km/ontology-graph-rag.html">Семантическая нарезка и онтологический RAG</a> <span>– почему обычный поиск ломается</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/ai-km/continuous-documentation.html">Документирование на лету</a> <span>– как вытаскивать знания прямо из процессов</span></li>
+      <li><a href="https://pragmatic-km.guide/practices/ai-km/ai-in-sdlc.html">ИИ в процессах разработки</a> <span>– ADR и связь решений с реализацией</span></li>
     </ul>
   </div>
 
   <div class="note">
-    <b>Практика на пять минут.</b> Задайте внутреннему ИИ-ассистенту три обычных вопроса про работу вашей команды — из тех, что задают новички. Ответы покажут состояние ваших знаний честнее любого аудита: что не записано, что устарело, где нет владельца.
+    <b>Практика на пять минут.</b> Задайте внутреннему ИИ-ассистенту три обычных вопроса про работу вашей команды – из тех, что задают новички. Ответы покажут состояние ваших знаний честнее любого аудита: что не записано, что устарело, где нет владельца.
   </div>
 </section>
 
 <footer>
-  <p><b>Первый шаг после лекции.</b> Найдите один вопрос, который в чате задают каждую неделю. Закройте его одной страницей — с владельцем, датой обновления и точкой входа там, где спрашивают. Через месяц посмотрите, стали ли спрашивать реже.</p>
+  <p><b>Первый шаг после лекции.</b> Найдите один вопрос, который в чате задают каждую неделю. Закройте его одной страницей – с владельцем, датой обновления и точкой входа там, где спрашивают. Через месяц посмотрите, стали ли спрашивать реже.</p>
   <p>Вопросы и обсуждения: <a href="https://t.me/the_know_all">канал Knowledge &amp; Bacon</a> · <a href="https://www.linkedin.com/in/svetlana-novikova/">LinkedIn</a></p>
 </footer>
 
